@@ -10,6 +10,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>PalnHub</title>
       </Head>
       <Layout>
+        <style jsx global>{`
+          body {
+            margin: 0;
+          }
+        `}</style>
         <Component {...pageProps} />
       </Layout>
     </>
