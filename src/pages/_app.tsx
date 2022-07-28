@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from '@/components/Layout/DefaultLayout';
+import 'tailwindcss/tailwind.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -10,11 +11,6 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>PalnHub</title>
       </Head>
       <Layout>
-        <style jsx global>{`
-          body {
-            margin: 0;
-          }
-        `}</style>
         <Component {...pageProps} />
       </Layout>
     </>
