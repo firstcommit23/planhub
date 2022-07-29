@@ -33,12 +33,13 @@ const Container = styled.div`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  @media (min-width: 768px) {
+    width: 768px;
+  }
 `;
 
 const NavbarHeader = styled.div`
-  margin-right: -15px;
-  margin-left: -15px;
-  float: left;
+  margin-left: -30px;
 `;
 
 const NavbarTitle = styled.a`
