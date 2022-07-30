@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import tw, { styled, css } from 'twin.macro';
+import PlanList from '@/components/PlanList';
 
 const Home = () => {
   const router = useRouter();
@@ -14,6 +15,7 @@ const Home = () => {
       <SearchWrap>
         <input placeholder="검색어를 입력하세요" value={searchText} onChange={handelSearchText} />
       </SearchWrap>
+
       <div className="block border-solid pt-6">
         <h1 className="float-left tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-4xl block text-indigo-600 xl:inline">
           플랜 목록
@@ -25,62 +27,7 @@ const Home = () => {
           새 플랜 작성하기
         </button>
       </div>
-
-      <div className="clear-both pt-6">
-        <div className="relative bg-white rounded-lg shadow-lg overflow-hidden border">
-          <div className="py-3 px-4">
-            <h4 className="mt-1 text-xl font-semibold leading-tight truncate inline pr-1">
-              된장찌개 장보기 체크리스트
-            </h4>
-            <span className="bg-teal-200 text-teal-800 text-xs px-2 inline rounded-full uppercase font-semibold tracking-wide">
-              new
-            </span>
-          </div>
-          <div className="p-4 border-t text-l text-gray-700">
-            <ul className="list-disc pl-6">
-              <li>육수(다시멸치, 다시마)</li>
-              <li>양파</li>
-              <li>대파</li>
-              <li>된장</li>
-            </ul>
-            ...외 3개 항목
-          </div>
-          <div className="p-4 border-t text-gray-700">
-            <div className="m-1">작성일자 : 2202.08.12</div>
-            <div className="m-1">작성자 : 나다</div>
-          </div>
-          <div className="p-4 border-t border-b text-xs text-gray-700">
-            <span>120 Fork</span>
-            <span className="ml-3">30 Like</span>
-          </div>
-        </div>
-
-        <div className="relative bg-white rounded-lg shadow-lg overflow-hidden border mt-5">
-          <div className="py-3 px-4">
-            <h4 className="mt-1 text-xl font-semibold leading-tight truncate inline pr-1">
-              된장찌개 장보기 체크리스트
-            </h4>
-            <Test>new</Test>
-          </div>
-          <div className="p-4 border-t text-l text-gray-700">
-            <ul className="list-disc pl-6">
-              <li>육수(다시멸치, 다시마)</li>
-              <li>양파</li>
-              <li>대파</li>
-              <li>된장</li>
-            </ul>
-            ...외 3개 항목
-          </div>
-          <div className="p-4 border-t text-gray-700">
-            <div className="m-1">작성일자 : 2202.08.12</div>
-            <div className="m-1">작성자 : 나다</div>
-          </div>
-          <div className="p-4 border-t border-b text-xs text-gray-700">
-            <span>120 Fork</span>
-            <span className="ml-3">30 Like</span>
-          </div>
-        </div>
-      </div>
+      <PlanList />
     </div>
   );
 };
@@ -123,12 +70,4 @@ const SearchWrap = styled.div`
   }
 `;
 
-const Test = styled.span(() => [
-  tw`
-  bg-indigo-200 text-indigo-800 text-xs px-2 inline rounded-full uppercase font-semibold tracking-wide
-  `,
-  css`
-    color: red;
-  `,
-]);
 export default Home;

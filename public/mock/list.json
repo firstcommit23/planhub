@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "된장찌개",
+      "createDte": "2022-07-02 23:12:22",
+      "forkCnt": 32,
+      "userId": 12,
+      "items": [
+        { "id": 1, "content": "양파", "checked": true },
+        { "id": 2, "content": "대파", "checked": true },
+        { "id": 3, "content": "두부", "checked": true }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "수영 장비 체크",
+      "createDte": "2022-07-02 23:12:22",
+      "forkCnt": 32,
+      "userId": 12,
+      "items": [
+        { "id": 1, "content": "수영복 ", "checked": true },
+        { "id": 2, "content": "수영모", "checked": true },
+        { "id": 3, "content": "수경", "checked": true },
+        { "id": 3, "content": "가방", "checked": true },
+        { "id": 3, "content": "젖은 옷 담는 비닐", "checked": true }
+      ]
+    }
+  ]
+}
