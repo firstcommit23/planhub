@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import styled from '@emotion/styled';
+import tw, { styled, css } from 'twin.macro';
 
 const Home = () => {
   const router = useRouter();
@@ -60,9 +60,7 @@ const Home = () => {
             <h4 className="mt-1 text-xl font-semibold leading-tight truncate inline pr-1">
               된장찌개 장보기 체크리스트
             </h4>
-            <span className="bg-teal-200 text-teal-800 text-xs px-2 inline rounded-full uppercase font-semibold tracking-wide">
-              new
-            </span>
+            <Test>new</Test>
           </div>
           <div className="p-4 border-t text-l text-gray-700">
             <ul className="list-disc pl-6">
@@ -125,4 +123,12 @@ const SearchWrap = styled.div`
   }
 `;
 
+const Test = styled.span(() => [
+  tw`
+  bg-indigo-200 text-indigo-800 text-xs px-2 inline rounded-full uppercase font-semibold tracking-wide
+  `,
+  css`
+    color: red;
+  `,
+]);
 export default Home;
