@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import React from 'react';
 // import tw, { styled, css } from 'twin.macro';
 
 const PlanList = () => {
@@ -12,14 +13,24 @@ const PlanList = () => {
   if (status === 'loading') {
     return <span>loading..</span>;
   }
+
+  const goDetail = (e: React.MouseEvent<HTMLDivElement>, id: number) => {
+    e.stopPropagation();
+    router.push(`/plan/${id}`);
+  };
+
+  const goFork = (e: React.MouseEvent<HTMLSpanElement>, id: number) => {
+    e.stopPropagation();
+    router.push(`/plan/forklist?id=${id}`);
+  };
   return (
     <div className="clear-both py-6">
       {data &&
         data.data.data.map((list: any) => {
           return (
             <div
-              className="relative my-4 first:my-0 last:mb-0 bg-white rounded-lg shadow-lg overflow-hidden border"
-              onClick={() => router.push(`/plan/${list.id}`)}
+              className="relative my-4 first:my-0 last:mb-0 bg-white rounded-lg shadow-lg overflow-hidden border cursor-pointer"
+              onClick={(e) => goDetail(e, list.id)}
               key={list.id}>
               <div className="py-3 px-4">
                 <h4 className="mt-1 text-xl font-semibold leading-tight truncate inline pr-1">
@@ -42,7 +53,7 @@ const PlanList = () => {
                 <div className="m-1">작성자 : 나다</div>
               </div>
               <div className="p-4 border-t border-b text-xs text-gray-700">
-                <span onClick={() => router.push(`/plan/forklist?id=${list.id}`)}>
+                <span className="font-bold" onClick={(e) => goFork(e, list.id)}>
                   {list.forkCnt} Fork
                 </span>
               </div>
