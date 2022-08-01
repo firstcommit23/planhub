@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
-import tw, { styled, css } from 'twin.macro';
+import { styled } from 'twin.macro';
+// import tw, { styled, css } from 'twin.macro';
 import PlanList from '@/components/PlanList';
 
 const Home = () => {

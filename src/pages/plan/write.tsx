@@ -42,7 +42,7 @@ const WritePage = () => {
       />
       <br />
       {items.map((item: ItemType) => (
-        <PlanItem item={item} onAdd={onAdd} onUpdate={onUpdate} onDelete={onDelete} />
+        <PlanItem key={item.no} item={item} onAdd={onAdd} onUpdate={onUpdate} onDelete={onDelete} />
       ))}
 
       <div className="fixed bottom-0 left-0 right-0 w-full h-16 z-99">
@@ -81,7 +81,7 @@ const PlanItem = ({ item, onAdd, onUpdate, onDelete }: IPlanItemProps) => {
     setInput(e.target.value);
   };
 
-  const onHandleChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onHandleChecked = () => {
     setChecked((prev) => !prev);
   };
 

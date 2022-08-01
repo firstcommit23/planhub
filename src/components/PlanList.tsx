@@ -43,7 +43,7 @@ const PlanList = () => {
               <div className="p-4 border-t text-l text-gray-700">
                 <ul className="list-disc pl-6">
                   {list.items.map((item: any) => (
-                    <li>{item.content}</li>
+                    <li key={item.no}>{item.content}</li>
                   ))}
                 </ul>
                 ...외 3개 항목

@@ -40,7 +40,7 @@ interface IPlanItemProps {
 }
 const PlanItem = ({ planId, no, content, checked }: IPlanItemProps) => {
   const [check, setCheck] = useState<boolean>(checked);
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = () => {
     setCheck((prev) => !prev);
     console.log('api call 보내기', planId);
   };
